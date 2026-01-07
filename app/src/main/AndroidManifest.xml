@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/bt_2"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/Theme.SupportApp">
+        <activity
+            android:name=".Consolidated_Pick.NextorderconsolidatedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Consolidated_Pick.CompletedordersummaryconsolidatedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Consolidated_Pick.OrdecompleteconsolidatedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Consolidated_Pick.ConsolidatedJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Consolidated_Pick.LocationDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Consolidated_Pick.ConsolidatedTransactionActivity"
+            android:exported="false" />
+
+
+
+
+        <activity
+            android:name=".Induvidual_Pick.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".Induvidual_Pick.Barcodescanner" />
+        <activity android:name=".Induvidual_Pick.Welcomeactivity" />
+        <activity android:name=".Induvidual_Pick.ProcessActivity" />
+        <activity android:name=".Induvidual_Pick.OutBoundActivity" />
+        <activity android:name=".Induvidual_Pick.OrdersActivity" />
+        <activity android:name=".Induvidual_Pick.OrderSummaryActivity" />
+        <activity android:name=".Induvidual_Pick.ConfirmationPageActivity" />
+        <activity android:name=".Induvidual_Pick.InduvidualJobActivity" />
+        <activity android:name=".Induvidual_Pick.NextOrderReadyActivity" />
+        <activity android:name=".Induvidual_Pick.CompleteordersummaryActivity" /><!-- ADD THE FOLLOWING FOR PICKLOCATIONACTIVITY -->
+        <activity
+            android:name=".Induvidual_Pick.PickLocationActivity"
+            android:screenOrientation="landscape" />
+
+    </application>
+
+</manifest>

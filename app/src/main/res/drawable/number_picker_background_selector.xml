@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- State when focused -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#40FFFFFF" /> <!-- Semi-transparent white for focused highlight -->
+            <stroke android:width="2dp" android:color="#FFFFFF" /> <!-- White border when focused -->
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+    <!-- Default state (not focused) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" /> <!-- Or your default NumberPicker background color if any -->
+            <stroke android:width="1dp" android:color="#80FFFFFF" /> <!-- Lighter, semi-transparent border -->
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+</selector>
