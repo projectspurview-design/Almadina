@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity"
+    android:background="@drawable/back">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supporteo"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingTop="50dp" />
+
+        <!-- Pairing Code TextView -->
+        <TextView
+            android:id="@+id/pairingCodeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pairing code"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            android:layout_marginTop="20dp" />
+
+        <!-- Horizontal LinearLayout for EditText inputs -->
+        <LinearLayout
+            android:id="@+id/editTextLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pairingCodeText"
+            android:layout_marginTop="30dp">
+
+            <EditText
+                android:id="@+id/editTextA"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:maxLength="1"
+                android:hint="A"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginEnd="10dp" />
+
+            <EditText
+                android:id="@+id/editTextJ"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:maxLength="1"
+                android:hint="J"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/editTextS"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:maxLength="1"
+                android:hint="S"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/editTextD"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:maxLength="1"
+                android:hint="D"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/editTextM"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:maxLength="1"
+                android:hint="M"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <!-- Instruction TextView -->
+        <TextView
+            android:id="@+id/instructionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To connect, share code with admin panel user"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextLayout"
+            android:layout_marginTop="30dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

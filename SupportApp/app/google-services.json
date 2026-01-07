@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "487005289462",
+    "firebase_url": "https://webrtcjava-c7aa0-default-rtdb.firebaseio.com",
+    "project_id": "webrtcjava-c7aa0",
+    "storage_bucket": "webrtcjava-c7aa0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487005289462:android:8b677ff06c5cba52e565d7",
+        "android_client_info": {
+          "package_name": "com.example.supportapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGVABvdadHII1cfNvMLQNkg1Pb3TW1oQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
