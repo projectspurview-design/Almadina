@@ -1,7 +1,3 @@
 <resources>
-    <string name="app_name">Pick by vision</string>
-    <string name="scan_barcode_text">Scan Barcode</string>
-    <string name="resume_text">Resume</string>
-    <string name="jump_button_text">Jump</string>
-    <string name="short_button_text">Short</string>
+    <string name="app_name">SupportApp</string>
 </resources>

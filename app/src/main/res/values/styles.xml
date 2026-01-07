@@ -1,42 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- your existing style -->
     <style name="MenuFeatureItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">20sp</item>
         <item name="android:layout_marginBottom">12dp</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:background">@drawable/bg_table_cell</item>
-        <item name="android:paddingLeft">12dp</item>
-        <item name="android:paddingRight">12dp</item>
     </style>
-
-    <!-- your existing style -->
-    <style name="NumberPickerTheme" parent="Theme.AppCompat.Light">
-        <item name="android:textColorPrimary">@android:color/white</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <!-- ADD THESE: table cell styles used by activity_location_details.xml -->
-    <style name="CellBase">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:paddingLeft">12dp</item>
-        <item name="android:paddingRight">12dp</item>
-    </style>
-
-    <style name="Cell" parent="CellBase">
-        <item name="android:background">@drawable/bg_table_cell</item>
-    </style>
-
-    <style name="CellHeader" parent="CellBase">
-        <item name="android:textStyle">bold</item>
-        <item name="android:background">@drawable/bg_table_cell_header</item>
-    </style>
-
 </resources>

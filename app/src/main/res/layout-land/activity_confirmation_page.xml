@@ -2,62 +2,71 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0c376a"> <ImageView
-    android:id="@+id/ivBayantTechnology"
-    android:layout_width="50dp"
-    android:layout_height="35dp"
-    android:layout_marginTop="4dp"
-    android:contentDescription="Bayant Technology Logo"
-    android:src="@drawable/bt_2"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    android:background="#1E1F23">
 
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Logout"
-        android:textColor="#ffffff"
-        android:background="#ff4444"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"/>
+    <!-- Top Text -->
 
-
+    <!-- Bottom Buttons Container -->
     <TextView
         android:id="@+id/tvOrderComplete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:text="The order is complete"
-        android:textColor="#FFFFFFFF" android:textSize="28sp" android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        android:layout_marginBottom="64dp" /> <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnNext"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/pill_button_background"
-        android:text="Next"
-        android:textColor="#0c376a"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:stateListAnimator="@null"
-        android:foreground="@drawable/focus_circle_background"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottomButtons"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Menu Button -->
+
+        <!-- Empty Spacer Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_button"
+            android:text="Menu"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSpacer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_button"
+            android:enabled="false"
+            android:text=""
+            android:clickable="false" />
+
+        <!-- Next Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:background="@drawable/border_button" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,174 +2,177 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0c376a"> <ImageView
-    android:id="@+id/ivBayantTechnology"
-    android:layout_width="50dp"
-    android:layout_height="35dp"
-    android:layout_marginTop="4dp"
-    android:contentDescription="Bayant Technology Logo"
-    android:src="@drawable/bt_2"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    android:background="#1E1F23"
+    android:padding="24dp">
 
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Logout"
-        android:textColor="#ffffff"
-        android:background="#ff4444"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"/>
-
-
+    <!-- Heading -->
     <TextView
         android:id="@+id/tvHeading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Completed order summary:"
-        android:textSize="28sp" android:textColor="#FFFFFFFF" android:textStyle="bold" android:gravity="center"
-        android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="normal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Row 1: Picks & Quantity -->
     <LinearLayout
         android:id="@+id/row1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="40dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
         app:layout_constraintTop_toBottomOf="@id/tvHeading"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Picks -->
         <TextView
             android:id="@+id/tvPicks"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Picks: Loading..."
-            android:textSize="22sp"
+            android:text="Picks: 14"
+            android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:layout_weight="1"
             android:gravity="start" />
 
+        <!-- Quantity -->
         <TextView
             android:id="@+id/tvQuantity"
-            android:layout_width="334dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:text="Quantity: Loading..."
-            android:textColor="#FFFFFF"
-            android:textSize="22sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/row2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="50dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        app:layout_constraintTop_toBottomOf="@id/row1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:id="@+id/tvTime"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Time: Loading..."
-            android:textSize="22sp"
-            android:textColor="#FFFFFF"
-            android:layout_weight="1"
-            android:gravity="start" />
-
-        <TextView
-            android:id="@+id/tvGoal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Goal: Loading..."
-            android:textSize="22sp"
+            android:text="Quantity: 87"
+            android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:layout_weight="1"
             android:gravity="end" />
     </LinearLayout>
 
+    <!-- Row 2: Time & Goal -->
     <LinearLayout
-        android:id="@+id/performanceRow"
+        android:id="@+id/row2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="70dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/row2"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/row1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-            android:id="@+id/ivPerformanceIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_performance"
-            android:layout_marginEnd="8dp"
-            android:contentDescription="Performance icon" />
+        <!-- Time -->
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Time: 50:52"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:gravity="start" />
 
+        <!-- Goal -->
+        <TextView
+            android:id="@+id/tvGoal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Goal: 41:00"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:gravity="end" />
+    </LinearLayout>
+
+    <!-- Performance Row with icon -->
+    <LinearLayout
+        android:id="@+id/performanceRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/row2"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Icon: Use a custom drawable or emoji as placeholder -->
+        <TextView
+            android:id="@+id/tvIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Label -->
         <TextView
             android:id="@+id/tvPerformanceLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
             android:text="Performance (%):"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textColor="#FFFFFF" />
 
+        <!-- Value -->
         <TextView
             android:id="@+id/tvPerformanceValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text=" Loading..."
+            android:text="78"
+            android:textSize="20sp"
             android:textColor="#FFD54F"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tvLastUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Last Update: Never"
-            android:visibility="gone"
-            android:textSize="12sp" />
-
+            android:layout_marginStart="4dp" />
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnNext"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/pill_button_background"
-        android:text="Next"
-        android:textColor="#0c376a"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:stateListAnimator="@null"
-        android:foreground="@drawable/focus_circle_background"
+    <!-- Bottom Buttons container -->
+    <LinearLayout
+        android:id="@+id/bottomButtons"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Menu Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_button"
+            android:text="Menu"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <!-- Spacer Button (empty with border) -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSpacer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_button"
+            android:enabled="false"
+            android:text=""
+            android:clickable="false" />
+
+        <!-- Next Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:background="@drawable/border_button" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
