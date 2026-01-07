@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#13161A"
+    android:padding="16dp">
+
+    <!-- Call (top-left) -->
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Call"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/orange_button_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Page count (top-right) -->
+    <TextView
+        android:id="@+id/tvPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1/10"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Location Details"
+        android:textColor="#FFC107"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Table container -->
+    <LinearLayout
+        android:id="@+id/tableHolder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Table -->
+        <TableLayout
+            android:id="@+id/tblLocations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+            <!-- Header -->
+            <TableRow>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:text="Site"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/bg_table_cell_header"/>
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:text="Location"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/bg_table_cell_header"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="Qty"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/bg_table_cell_header"/>
+            </TableRow>
+
+            <!-- Sample rows -->
+            <TableRow>
+                <TextView style="@style/Cell" android:text="F2"/>
+                <TextView style="@style/Cell" android:text="053401"/>
+                <TextView style="@style/Cell" android:text="2"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView style="@style/Cell" android:text="T1"/>
+                <TextView style="@style/Cell" android:text="062901"/>
+                <TextView style="@style/Cell" android:text="60"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView style="@style/Cell" android:text="F5"/>
+                <TextView style="@style/Cell" android:text="021804"/>
+                <TextView style="@style/Cell" android:text="195"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <!-- Up/Down arrows (right of table) -->
+    <LinearLayout
+        android:id="@+id/arrowColumn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/tableHolder"
+        app:layout_constraintBottom_toBottomOf="@id/tableHolder"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp">
+
+        <ImageView
+            android:id="@+id/arrowUp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/arrow_up_focusable"
+            android:tint="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@null"
+            android:contentDescription="Scroll up" />
+
+        <ImageView
+            android:id="@+id/arrowDown"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/arrow_down_focusable"
+            android:tint="#FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@null"
+            android:contentDescription="Scroll down" />
+    </LinearLayout>
+
+    <!-- Bottom buttons -->
+    <LinearLayout
+        android:id="@+id/bottomRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tableHolder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backButton"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/yellow_button_background"
+            android:text="Back"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/focus_circle_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBottomRight"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/orange_button_background"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/focus_circle_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
