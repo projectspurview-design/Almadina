@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/barc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Left Empty Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/leftEmptyButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/border_button"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/emptyButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Center Empty Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/emptyButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/border_button"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/leftEmptyButton"
+        app:layout_constraintEnd_toStartOf="@id/nextButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Right Next Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/border_button"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/emptyButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Separator Line -->
+    <View
+        android:id="@+id/separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="264dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
