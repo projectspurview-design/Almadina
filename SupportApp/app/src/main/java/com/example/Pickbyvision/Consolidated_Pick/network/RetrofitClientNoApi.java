@@ -1,0 +1,60 @@
+package com.example.Pickbyvision.Consolidated_Pick.network;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class RetrofitClientNoApi {
+
+    // ✅ BASE URL WITHOUT /api
+    private static final String BASE_URL =
+            "https://apps.almadinalogistics.com:4432/PICK_BY_VISION_REST_API/";
+
+    private static final String API_KEY =
+            "bkV7TzFDJx4m55fY~5Lql2BvsEwlMXr";
+
+    private static Retrofit retrofit;
+
+    public static Retrofit getInstance() {
+        if (retrofit == null) {
+            // Logging
+            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+            // API key header
+            Interceptor apiKeyInterceptor = chain -> {
+                Request original = chain.request();
+                Request request = original.newBuilder()
+                        .header("XApiKey", API_KEY)
+                        .method(original.method(), original.body())
+                        .build();
+                return chain.proceed(request);
+            };
+
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .connectTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(45, TimeUnit.SECONDS)
+                    .writeTimeout(45, TimeUnit.SECONDS)
+                    .addInterceptor(apiKeyInterceptor)
+                    .addInterceptor(logging)
+                    .build();
+
+            Gson gson = new GsonBuilder().setLenient().create();
+
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)   // ✅ .../PICK_BY_VISION_REST_API/
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .build();
+        }
+        return retrofit;
+    }
+}
