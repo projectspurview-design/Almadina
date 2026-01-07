@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Transparent / same color as parent -->
+    <solid android:color="@android:color/transparent" />
+
+    <!-- Rounded corners -->
+    <corners android:radius="14dp" />
+
+    <!-- White border like your sample button -->
+    <stroke
+        android:width="1.5dp"
+        android:color="@android:color/white" />
+
+    <!-- Inner spacing so text doesn’t touch border -->
+    <padding
+        android:left="16dp"
+        android:top="8dp"
+        android:right="16dp"
+        android:bottom="8dp" />
+</shape>

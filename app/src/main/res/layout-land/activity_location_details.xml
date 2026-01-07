@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0c376a"
+    android:padding="16dp">
+
+    <!-- Call Button (top-left) -->
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Call"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        android:background="@drawable/orange_button_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/ivBayantTechnology"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="Bayant Technology Logo"
+        android:src="@drawable/bt_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Logout"
+        android:textColor="#ffffff"
+        android:background="#ff4444"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
+    <!-- Page count (top-right) -->
+    <TextView
+        android:id="@+id/tvPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/0"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Location Details"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/btnCall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- "No Locations Found" TextView -->
+    <TextView
+        android:id="@+id/tvNoLocations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Locations Found"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Table container with scroll -->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/arrowColumn"
+        app:layout_constraintBottom_toTopOf="@id/bottomRow"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp">
+
+        <ScrollView
+            android:id="@+id/scrollViewTable"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <TableLayout
+                android:id="@+id/tblLocations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:shrinkColumns="*"
+                android:divider="@null">
+                <!-- Header and data rows will be added programmatically -->
+            </TableLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+
+    <!-- Up/Down arrows (right of table) -->
+    <LinearLayout
+        android:id="@+id/arrowColumn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/horizontalScroll"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalScroll"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/arrowUp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/north_24dp_ffffff_fill0_wght400_grad0_opsz24"
+            android:tint="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Scroll up" />
+
+        <ImageView
+            android:id="@+id/arrowDown"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/south_24dp_ffffff_fill0_wght400_grad0_opsz24"
+            android:tint="#FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Scroll down" />
+    </LinearLayout>
+
+    <!-- Bottom buttons -->
+    <LinearLayout
+        android:id="@+id/bottomRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBack"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/pill_button_background"
+            android:text="Back"
+            android:textColor="#0c376a"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/focus_circle_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginLeft="400dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/pill_button_background"
+            android:text="Next"
+            android:textColor="#0c376a"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/focus_circle_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

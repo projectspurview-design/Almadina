@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0c376a">
+
+    <ImageView
+        android:id="@+id/ivBayantTechnology"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="Bayant Technology Logo"
+        android:src="@drawable/bt_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Logout"
+        android:textColor="#ffffff"
+        android:background="#ff4444"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/orderSummaryContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <TextView
+            android:id="@+id/orderSummaryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Summary"
+            android:textColor="#FFFFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp" />
+
+        <!-- Order Number Section with Underline -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/orderNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order#: Loding..."
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF"
+                android:layout_marginEnd="16dp" />
+
+        </LinearLayout>
+
+        <!-- SKU Section with Underline -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/skuText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SKU: Loding..."
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF"
+                android:layout_marginEnd="16dp" />
+
+        </LinearLayout>
+
+        <!-- Quantity Section with Underline -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/quantityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity: Loding..."
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF"
+                android:layout_marginEnd="16dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Up/Down Arrow Navigation (Optional) -->
+    <LinearLayout
+        android:id="@+id/arrowContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/orderSummaryContainer"
+        app:layout_constraintBottom_toBottomOf="@id/orderSummaryContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="24dp">
+
+        <ImageView
+            android:id="@+id/arrowUp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/north_24dp_ffffff_fill0_wght400_grad0_opsz24"
+            android:tint="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@null"
+            android:contentDescription="Scroll up" />
+
+        <ImageView
+            android:id="@+id/arrowDown"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/south_24dp_ffffff_fill0_wght400_grad0_opsz24"
+            android:tint="#FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@null"
+            android:contentDescription="Scroll down" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="36dp"
+        android:background="#FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orderSummaryContainer" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/pill_button_background"
+        android:text="Back"
+        android:textColor="#0c376a"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:stateListAnimator="@null"
+        android:foreground="@drawable/focus_circle_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNext"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/pill_button_background"
+        android:text="Next"
+        android:textColor="#0c376a"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:stateListAnimator="@null"
+        android:foreground="@drawable/focus_circle_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#FF00AA00</color> <!-- A darker green might be better for text -->
+    <color name="red">#FFCC0000</color>
+    <color name="lightwhite">#6C6665</color>
+    <color name="text_secondary">#B7C0CC</color>
+    <color name="highlight_yellow">#FFFFE0</color>
+    <color name="dark_blue_text">#FF003366</color>
+    <color name="Orange">#FF6600</color><!-- A standard red -->
+    <!-- ... other colors ... -->
+</resources>
