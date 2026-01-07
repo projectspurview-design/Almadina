@@ -1,2 +1,4 @@
-ALMADINA FINAL SOURCE CODE  
+finel code of individual pick with new ui
+
+
 
