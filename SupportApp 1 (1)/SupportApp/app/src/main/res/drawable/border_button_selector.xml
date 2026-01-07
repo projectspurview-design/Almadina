@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- State when focused -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <!-- Let's define a distinct focused look -->
+            <solid android:color="#4A4A4A" /> <!-- Slightly lighter grey for focus, or any color you prefer -->
+            <stroke
+                android:width="2dp"
+                android:color="#00BFFF" /> <!-- Bright blue border for focus, or any color you prefer -->
+            <corners android:radius="4dp" /> <!-- Assuming you might want corners, adjust if not -->
+        </shape>
+    </item>
+
+    <!-- Default state (not focused) -->
+    <!-- This now correctly references YOUR existing border_button.xml -->
+    <item android:drawable="@drawable/border_button" />
+
+</selector>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- State when focused -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#4CAF50" /> <!-- Example: Green when focused -->
+            <stroke android:width="4dp" android:color="#FFFFFF" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <!-- Default state (can reference your existing drawable) -->
+    <item android:drawable="@drawable/border_button" />
+</selector>

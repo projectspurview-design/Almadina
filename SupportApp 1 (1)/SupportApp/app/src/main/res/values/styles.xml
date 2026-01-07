@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MenuFeatureItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+
+    <!-- START OF NEW STYLE FOR NUMBERPICKER -->
+    <style name="NumberPickerTheme" parent="Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textSize">18sp</item> <!-- You can adjust this size -->
+        <!-- Optional: if you want to ensure the NumberPicker itself has a background
+             that contrasts with its white text, especially if the parent
+             Theme.AppCompat.Light doesn't enforce one for NumberPicker.
+        <item name="android:background">#404040</item>
+        -->
+        <!-- Optional: To change the color of the horizontal dividers in the NumberPicker.
+             Requires API level that supports colorControlNormal or specific AppCompat attributes.
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        -->
+    </style>
+    <!-- END OF NEW STYLE FOR NUMBERPICKER -->
+
+</resources>

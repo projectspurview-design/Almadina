@@ -1,0 +1,60 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.example.supportapp'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.supportapp"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+dependencies {
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation "androidx.camera:camera-core:1.2.0"
+    implementation "androidx.camera:camera-camera2:1.2.0"
+    implementation "androidx.camera:camera-lifecycle:1.2.0"
+    implementation "androidx.camera:camera-view:1.2.0"
+    implementation 'com.google.mlkit:barcode-scanning:17.0.3'
+
+    // If libs.mlkit.barcode duplicates ML Kit barcode scanning, remove one.
+    implementation libs.mlkit.barcode
+
+    implementation platform('com.google.firebase:firebase-bom:32.2.0')
+    implementation 'com.google.firebase:firebase-database'
+    // OkHttp for REST API calls
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    // JSON parsing (if not already included)
+    implementation 'org.json:json:20230227'
+    implementation 'com.vuzix:sdk-speechrecognitionservice:master-SNAPSHOT'
+
+
+
+}
+
+apply plugin: 'com.google.gms.google-services'
