@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#13161A"
+    android:padding="16dp">
+
+    <!-- TOP: Call button -->
+    <Button
+        android:id="@+id/btnCall"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:paddingHorizontal="16dp"
+        android:text="Call"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:drawablePadding="8dp"
+        android:background="@drawable/orange_button_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        app:icon="@drawable/back"
+        app:iconTint="#FFFFFF"/>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Consolidated Tranction ID"
+        android:textColor="#FFC107"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_goneMarginTop="8dp"
+        android:layout_marginTop="20dp"/>
+
+    <!-- CENTER: IDs container -->
+    <LinearLayout
+        android:id="@+id/idsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toTopOf="@+id/bottomRow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/arrowColumn"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp">
+
+        <!-- First ID (unselected) -->
+        <TextView
+            android:id="@+id/tvId1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="021007074"
+            android:textSize="22sp"
+            android:textColor="#B7C0CC"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="16dp"/>
+
+        <!-- Selected ID (highlighted with yellow border) -->
+        <TextView
+            android:id="@+id/tvId2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="021017075"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/selected_border"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+    <!-- Right vertical arrows -->
+    <LinearLayout
+        android:id="@+id/arrowColumn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/idsContainer"
+        app:layout_constraintBottom_toBottomOf="@id/idsContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp">
+
+        <ImageView
+            android:id="@+id/arrowUp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/arrow_up_focusable"
+            android:tint="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@null"
+            android:contentDescription="Scroll up" />
+
+        <ImageView
+            android:id="@+id/arrowDown"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/arrow_down_focusable"
+            android:tint="#FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@null"
+            android:contentDescription="Scroll down" />
+    </LinearLayout>
+
+    <!-- BOTTOM row -->
+    <LinearLayout
+        android:id="@+id/bottomRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backButton"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/yellow_button_background"
+            android:text="Back"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/focus_circle_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBottomRight"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/orange_button_background"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/focus_circle_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

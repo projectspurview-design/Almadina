@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemLocationLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="#0c376a"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- NEW: Product Image (positioned on the left) -->
+    <ImageView
+        android:id="@+id/ivProductImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:background="@android:drawable/editbox_background"
+        android:contentDescription="Product Image"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Existing TextViews with updated constraints to accommodate image -->
+
+    <!-- Location Name (your existing tvLocationName) -->
+    <TextView
+        android:id="@+id/tvLocationName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Location Name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/ivProductImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvQuantity" />
+
+    <!-- Site (your existing tvSite) -->
+    <TextView
+        android:id="@+id/tvSite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Site: A1"
+        android:textSize="12sp"
+        android:textColor="#FFFFFFFF"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/ivProductImage"
+        app:layout_constraintTop_toBottomOf="@id/tvLocationName"
+        app:layout_constraintEnd_toStartOf="@id/tvQuantity" />
+
+    <!-- Location Code (your existing tvLocationCode) -->
+    <TextView
+        android:id="@+id/tvLocationCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Code: A1010102"
+        android:textSize="12sp"
+        android:textColor="#FFFFFFFF"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toEndOf="@id/ivProductImage"
+        app:layout_constraintTop_toBottomOf="@id/tvSite"
+        app:layout_constraintEnd_toStartOf="@id/tvQuantity" />
+
+    <!-- Quantity (your existing tvQuantity) -->
+    <TextView
+        android:id="@+id/tvQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qty: 10"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvLocationName"
+        app:layout_constraintBottom_toBottomOf="@id/tvLocationCode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
