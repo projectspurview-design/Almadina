@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0c376a"
+    tools:context=".Induvidual_Pick.InduvidualJobActivity">
+
+    <ImageView
+        android:id="@+id/ivBayantTechnology"
+        android:layout_width="50dp"
+        android:layout_height="35dp"  android:layout_marginTop="4dp"
+        android:contentDescription="Bayant Technology Logo"
+        android:src="@drawable/bt_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Logout"
+        android:textColor="#0c376a"
+        android:background="#FFFFFFFF"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/progressContainer"
+        android:layout_width="607dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.717"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/gradient_progress_bar" />
+
+        <TextView
+            android:id="@+id/progressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="32dp"
+            android:minHeight="32dp"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="/" />
+
+    </LinearLayout>
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/camera_preview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/progressContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/orderInfoContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/progressContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/skuStatusText"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/productImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Product Image"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/locationLabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location#: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/locationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    tools:text="Loading..." />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="end|center_vertical">
+
+                <TextView
+                    android:id="@+id/quantityLabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quantity: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/quantityText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="" android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    />
+
+                <TextView
+                    android:id="@+id/pausedStatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paused"
+                    android:visibility="gone"
+                    android:textColor="#FF0000"
+                    android:textSize="18sp"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/timerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/productLabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product#: "
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/productText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Loading..." android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/descriptionLabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desc: "
+                android:visibility="gone"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/descriptionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Loading..." android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:ellipsize="end"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Left side: MFG Date -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="start|center_vertical">
+
+                <TextView
+                    android:id="@+id/manufacturingLabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MFG DATE: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/manufacturingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Loading..."
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+
+            <!-- Right side: EXP Date -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="start|center_vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/expirationLabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EXP DATE: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/expirationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Loading..."
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+
+            <!-- Product Image (positioned on the right) -->
+            <ImageView
+                android:id="@+id/productImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:background="@android:drawable/editbox_background"
+                android:contentDescription="Product Image"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/skuStatusText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        tools:text="Right SKU"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/menuLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/menuLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnJumpTo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Jump to"
+            android:textColor="#0c376a"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/pill_button_background"
+            android:stateListAnimator="@null"
+            app:icon="@drawable/keyboard_arrow_right_20dp_0c376a_fill0_wght400_grad0_opsz20"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:gravity="center_vertical|start"
+            android:layout_marginEnd="8dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:backgroundTint="@null"
+            app:iconTint="@null"
+            app:iconSize="24dp"
+            android:foreground="@drawable/focus_circle_background" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShort"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Short"
+            android:textColor="#0c376a"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/pill_button_background"
+            android:stateListAnimator="@null"
+            app:icon="@drawable/deployed_code_20dp_0c376a_fill0_wght400_grad0_opsz20"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:gravity="center_vertical|start"
+            android:layout_marginEnd="8dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:backgroundTint="@null"
+            app:iconTint="@null"
+            app:iconSize="24dp"
+            android:foreground="@drawable/focus_circle_background" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnScanBarcode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Scan barcode"
+            android:textColor="#0c376a"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/pill_button_background"
+            android:stateListAnimator="@null"
+            app:icon="@drawable/ic_barcode_scan"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:gravity="center_vertical|start"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:backgroundTint="@null"
+            app:iconTint="@null"
+            app:iconSize="24dp"
+            android:foreground="@drawable/focus_circle_background" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/shortQuantityInputContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="#0c376a"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Quantity Picked:"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvEnteredQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="12dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBackspaceDigit"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Remove"
+                    android:textSize="20sp"
+                    android:textColor="#0c376a"
+                    android:background="@drawable/pill_button_background"
+                    app:backgroundTint="@null" android:stateListAnimator="@null"
+                    android:layout_marginEnd="4dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:nextFocusRight="@+id/npSingleDigitInput"
+                    android:nextFocusDown="@+id/btnCancelShortInput"
+                    android:foreground="@drawable/focus_circle_background" />
+
+                <NumberPicker
+                    android:id="@+id/npSingleDigitInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:theme="@style/NumberPickerTheme"
+                    android:background="@drawable/number_picker_background_selector"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:nextFocusRight="@+id/btnAddDigit"
+                    android:nextFocusLeft="@+id/btnBackspaceDigit"
+                    android:nextFocusUp="@+id/tvEnteredQuantity"
+                    android:nextFocusDown="@+id/btnCancelShortInput"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddDigit"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Add"
+                    android:textSize="20sp"
+                    android:textColor="#0c376a"
+                    android:background="@drawable/pill_button_background"
+                    app:backgroundTint="@null" android:stateListAnimator="@null"
+                    android:layout_marginStart="4dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:nextFocusLeft="@+id/npSingleDigitInput"
+                    android:nextFocusDown="@+id/btnConfirmShortInput"
+                    android:foreground="@drawable/focus_circle_background" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelShortInput"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="Back"
+                android:background="@drawable/pill_button_background"
+                app:backgroundTint="@null" android:stateListAnimator="@null"
+                android:textColor="#0c376a"
+                android:textSize="20sp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusRight="@+id/btnConfirmShortInput"
+                android:nextFocusLeft="@+id/npSingleDigitInput"
+                android:nextFocusUp="@+id/npSingleDigitInput"
+                android:nextFocusDown="@+id/npSingleDigitInput"
+                android:layout_marginEnd="4dp"
+                android:foreground="@drawable/focus_circle_background" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmShortInput"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="Next"
+                android:background="@drawable/pill_button_background"
+                app:backgroundTint="@null" android:stateListAnimator="@null"
+                android:textColor="#0c376a"
+                android:textSize="20sp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusRight="@+id/npSingleDigitInput"
+                android:nextFocusLeft="@+id/btnCancelShortInput"
+                android:nextFocusUp="@+id/npSingleDigitInput"
+                android:nextFocusDown="@+id/npSingleDigitInput"
+                android:layout_marginStart="4dp"
+                android:foreground="@drawable/focus_circle_background" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
